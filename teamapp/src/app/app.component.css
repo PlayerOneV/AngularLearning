@@ -11,16 +11,10 @@ h1 {
 
 .list {
     padding: 1.5rem;
-    width:auto;
+    width: auto;
     height: 10rem;
     border: 0.1rem solid grey;
     overflow: auto;
-}
-
-.list li {
-    list-style: none;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
 }
 
 .add-members-container input {

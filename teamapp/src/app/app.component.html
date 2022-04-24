@@ -9,10 +9,13 @@
       <button (click)="addMember()">Add</button>
     </div>
     <div class="generate-teams-container">
-      <input type="text" placeholder="# of teams">
-      <button>Generate</button>
+      <input #teamsNumberInput type="number" placeholder="# of teams" (input)="getTeamsNumber(teamsNumberInput.value)" [value]="teamsNumber">
+      <button (click) ="generateTeams()">Generate</button>
     </div>
     <!--Mostramos el mensaje de error en caso de ser necesario-->
     <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
+  </div>
+  <div *ngIf="teams.length" class="teams-container">
+    <app-team *ngFor="let team of teams; let i = index" [team] = "team" [i] = "i"></app-team>
   </div>
 </div>
