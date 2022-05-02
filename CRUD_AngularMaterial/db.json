@@ -1,0 +1,41 @@
+{
+  "productList": [
+    {
+      "productName": "Monitor GameFactor",
+      "category": "Electronics",
+      "date": "2022-05-09T05:00:00.000Z",
+      "freshness": "Second hand",
+      "price": 15000,
+      "comment": "This is a good monitor",
+      "id": 1
+    },
+    {
+      "productName": "Xiaomi redmi 10x",
+      "category": "Vegetables",
+      "date": "2022-05-31T05:00:00.000Z",
+      "freshness": "Second hand",
+      "price": 4900,
+      "comment": "Phone in good conditions",
+      "id": 2
+    },
+    {
+      "productName": "Old apple",
+      "category": "Fruits",
+      "date": "2022-05-06T05:00:00.000Z",
+      "freshness": "Brand New",
+      "price": 350,
+      "comment": "Apple that grands happiness",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
