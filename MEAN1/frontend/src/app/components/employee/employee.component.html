@@ -2,7 +2,23 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h1>Formulario</h1>
+                <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                    <input type="hidden" name="_id" [(ngModel)]="employeeService.selectedEmployee._id">
+                    <div class="mb-3">
+                        <input type="text" name="name" [(ngModel)]="employeeService.selectedEmployee.name" class="form-control" placeholder="Enter the fullname">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="position" [(ngModel)]="employeeService.selectedEmployee.position" class="form-control" placeholder="Enter the position">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="office" [(ngModel)]="employeeService.selectedEmployee.office" class="form-control" placeholder="Enter the office">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" name="salary" [(ngModel)]="employeeService.selectedEmployee.salary" class="form-control" placeholder="Enter the salary">
+                    </div>
+                    <button class="btn btn-secondary me-2" type="reset">Clean</button>
+                    <button class="btn btn-primary">Save</button>
+                </form>
             </div>
         </div>
     </div>
@@ -17,14 +33,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr *ngFor="let employee of employeeService.employees">
+                    <td class="pt-3">{{employee.name}}</td>
+                    <td class="pt-3">{{employee.position}}</td>
+                    <td class="pt-3">{{employee.office}}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm me-2"><i class="material-icons" (click)="updateEmployee(employee)">edit</i></button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee._id)"><i class="material-icons">delete</i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
-        
+
     </div>
 </div>
